@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/* ============================================
+   Design Tokens — Blinkit TrustShield MVP
+   From: docs/architecture.md → Design Tokens
+   ============================================ */
+
+@theme {
+  /* Brand Colors */
+  --color-blinkit-yellow: #F8CB46;
+  --color-blinkit-yellow-dark: #E5B93A;
+  --color-blinkit-green: #0C831F;
+  --color-blinkit-green-light: #ECFDF5;
+
+  /* AI Feature Accent */
+  --color-ai-purple: #7C3AED;
+  --color-ai-purple-light: #EDE9FE;
+
+  /* Text Colors */
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+
+  /* Surface & Border */
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F9FAFB;
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+
+  /* Semantic Colors */
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-phone: 0 0 40px rgba(0, 0, 0, 0.12);
+  --shadow-sticky: 0 -2px 10px rgba(0, 0, 0, 0.08);
+
+  /* Border Radius */
+  --radius-card: 12px;
+  --radius-pill: 9999px;
+  --radius-button: 8px;
+
+  /* Font */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #F3F4F6;
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+/* ============================================
+   Animations (Phase 4B)
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(124, 58, 237, 0);
+  }
+}
+
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Utility classes for micro-animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f3e8ff 25%, #e9d5ff 50%, #f3e8ff 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 0.3s ease-in-out;
+}
+
+/* Edge case 8.5: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-slide-down,
+  .animate-shimmer,
+  .animate-pulse-glow,
+  .animate-bounce-subtle {
+    animation: none !important;
+    transition: none !important;
+  }
+}

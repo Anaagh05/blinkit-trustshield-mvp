@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "author": "Rahul M.",
+    "rating": 5,
+    "date": "2026-07-15",
+    "text": "Amazing sound quality and fast delivery! Got it in 8 minutes. 100% genuine product with warranty card.",
+    "verified": true
+  },
+  {
+    "id": 2,
+    "author": "Priya S.",
+    "rating": 4,
+    "date": "2026-07-12",
+    "text": "Good earbuds for the price. The bass is decent but not exceptional. Love the 10 min delivery though.",
+    "verified": true
+  },
+  {
+    "id": 3,
+    "author": "Amit K.",
+    "rating": 5,
+    "date": "2026-07-10",
+    "text": "Very convenient to get electronics delivered so quickly. Product was sealed and authentic boAt.",
+    "verified": true
+  },
+  {
+    "id": 4,
+    "author": "Neha V.",
+    "rating": 3,
+    "date": "2026-07-08",
+    "text": "Average battery life. Didn't last the claimed 42 hours. But it's okay for daily gym use.",
+    "verified": true
+  },
+  {
+    "id": 5,
+    "author": "Karan D.",
+    "rating": 5,
+    "date": "2026-07-05",
+    "text": "Best TWS under 1500! Pairing is instant. Delivered fast and perfectly packed.",
+    "verified": true
+  },
+  {
+    "id": 6,
+    "author": "Sneha R.",
+    "rating": 4,
+    "date": "2026-07-02",
+    "text": "Comfortable fit in ears. Mic is okay for calls in quiet rooms, picks up background noise outdoors.",
+    "verified": true
+  },
+  {
+    "id": 7,
+    "author": "Arjun P.",
+    "rating": 2,
+    "date": "2026-06-29",
+    "text": "Right earbud stopped working after 2 weeks. Returned it easily though, good customer support.",
+    "verified": true
+  },
+  {
+    "id": 8,
+    "author": "Meera T.",
+    "rating": 5,
+    "date": "2026-06-25",
+    "text": "Saved me before a trip! Lost my old ones, ordered these on Blinkit and got them before leaving.",
+    "verified": true
+  },
+  {
+    "id": 9,
+    "author": "Vikram S.",
+    "rating": 4,
+    "date": "2026-06-20",
+    "text": "Good value for money. Looks premium and feels sturdy. Audio is crisp.",
+    "verified": true
+  },
+  {
+    "id": 10,
+    "author": "Pooja N.",
+    "rating": 5,
+    "date": "2026-06-18",
+    "text": "Authentic product verified on boAt website. Cheaper than Amazon with instant delivery!",
+    "verified": true
+  },
+  {
+    "id": 11,
+    "author": "Rohan B.",
+    "rating": 1,
+    "date": "2026-06-15",
+    "text": "Case got scratched easily. Didn't like the build quality of the charging case.",
+    "verified": true
+  },
+  {
+    "id": 12,
+    "author": "Anjali G.",
+    "rating": 5,
+    "date": "2026-06-12",
+    "text": "Superb bass and loud volume. Love listening to music on these. Quick delivery by Blinkit.",
+    "verified": true
+  },
+  {
+    "id": 13,
+    "author": "Siddharth M.",
+    "rating": 4,
+    "date": "2026-06-08",
+    "text": "Nice earbuds. Gaming mode works well, latency is barely noticeable.",
+    "verified": true
+  },
+  {
+    "id": 14,
+    "author": "Tanya C.",
+    "rating": 3,
+    "date": "2026-06-05",
+    "text": "A bit bulky for my small ears. Tends to slip out while running.",
+    "verified": true
+  },
+  {
+    "id": 15,
+    "author": "Vivek A.",
+    "rating": 5,
+    "date": "2026-06-01",
+    "text": "Great product. Touch controls are very responsive. Highly recommend.",
+    "verified": true
+  },
+  {
+    "id": 16,
+    "author": "Kavita J.",
+    "rating": 5,
+    "date": "2026-05-28",
+    "text": "Original boAt product with 1 year warranty. Happy to see electronics on Blinkit.",
+    "verified": true
+  },
+  {
+    "id": 17,
+    "author": "Deepak H.",
+    "rating": 2,
+    "date": "2026-05-25",
+    "text": "Sometimes disconnects randomly from my iPhone. Quite annoying.",
+    "verified": true
+  },
+  {
+    "id": 18,
+    "author": "Simran K.",
+    "rating": 5,
+    "date": "2026-05-22",
+    "text": "Loved the ASAP charge feature. 5 mins charge gives almost an hour playback.",
+    "verified": true
+  },
+  {
+    "id": 19,
+    "author": "Raj L.",
+    "rating": 4,
+    "date": "2026-05-18",
+    "text": "Good for the price. Not noise cancelling but isolates sound well enough.",
+    "verified": true
+  },
+  {
+    "id": 20,
+    "author": "Nisha W.",
+    "rating": 5,
+    "date": "2026-05-15",
+    "text": "Perfect for daily commute. Battery lasts for days without needing a case recharge.",
+    "verified": true
+  }
+]

@@ -1,0 +1,41 @@
+Project Goal:
+You are an expert Frontend Developer and UX Engineer. I need you to build a functional, mobile-responsive web prototype for a new quick-commerce feature called "Blinkit TrustShield & AI Review Summaries".
+
+Tech Stack:
+React (Vite) + Tailwind CSS. The final output must be a static frontend that is easily deployable to Vercel or Firebase Hosting.
+
+UI/UX Requirements:
+
+Mobile-First Layout: The app should mimic the mobile interface of Blinkit. On desktop, constrain the max-width to 480px and center it on the screen with a subtle shadow to look like a phone viewport. Use a clean, white background with Blinkit's signature yellow (#F8CB46) for primary actions.
+
+The Page: Create a Product Detail Page (PDP) for a high-value, non-grocery item: "boAt Airdopes 141 Wireless Earbuds" priced at ₹1,499.
+
+Standard Elements: Include a top navigation bar (Back button, Search, Cart icon), a product image placeholder, a "Delivery in 10 mins" tag, and a sticky "Add to Cart" button at the bottom of the screen.
+
+The Core MVP Features to Implement:
+
+Blinkit TrustShield Banner: Just below the product title and price, add a highly visible, trust-building banner with a light green or soft yellow background. It must prominently display two guarantees:
+
+"🛡️ 100% Brand Authentic"
+
+"📦 10-Min Doorstep Return Guarantee"
+
+AI Review Summary Component:
+
+Create a section below the TrustShield titled "What Buyers are Saying".
+
+Include a sleek button: "✨ Summarize Reviews with AI".
+
+Interactivity: When the user clicks this button, simulate an API call by showing a loading state (a spinner or pulsing skeleton loader) for 2 seconds.
+
+After 2 seconds, reveal an AI-generated summary card that reads: "Based on 1,420 Blinkit buyers: Users love the fast delivery and confirm the product is 100% genuine with a valid brand warranty. Sound quality is highly rated. Zero hassle with doorstep returns."
+
+Tasks for the Agent:
+
+Generate the implementation plan.
+
+Scaffold the React application and write the component code.
+
+Launch a local server and test it in your integrated browser to verify the UI looks like a polished, trustworthy e-commerce app.
+
+Once verified, provide me with the terminal commands to deploy this folder to Vercel via the Vercel CLI so I can get a live production URL.
