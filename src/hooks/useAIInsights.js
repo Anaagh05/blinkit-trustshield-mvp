@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { getCachedInsights, setCachedInsights } from '../utils/cache';
 import { fetchAIInsights } from '../services/gemini';
 import { fallbackAIInsights } from '../data/fallback';
@@ -14,9 +14,10 @@ export const useAIInsights = (product, reviews) => {
   const [aiResponse, setAiResponse] = useState(() => getCachedInsights(product?.id));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const isRequestInFlight = useRef(false); // Prevents race conditions (Edge Case 4.1, 4.2)
 
   const triggerAI = useCallback(async () => {
-    if (loading) return; // Prevent duplicate requests (Edge Case 4.1, 4.2)
+    if (isRequestInFlight.current) return; // Prevent duplicate requests
 
     // Check cache first
     const cached = getCachedInsights(product?.id);
@@ -33,13 +34,18 @@ export const useAIInsights = (product, reviews) => {
       return;
     }
 
+    isRequestInFlight.current = true;
     setLoading(true);
     setError(null);
 
     try {
       const data = await fetchAIInsights(product, reviews);
       setAiResponse(data);
-      setCachedInsights(product?.id, data);
+      setError(null);
+      // Only cache if it's NOT fallback data (i.e., it came from the real API)
+      if (!data.notice && !data.isFallback) {
+        setCachedInsights(product?.id, data);
+      }
     } catch (err) {
       console.warn('AI Insights trigger failed, using fallback:', err.message);
       if (err.message === 'RATE_LIMIT') {
@@ -53,8 +59,9 @@ export const useAIInsights = (product, reviews) => {
       setAiResponse(fallbackAIInsights);
     } finally {
       setLoading(false);
+      isRequestInFlight.current = false;
     }
-  }, [product, reviews, loading]);
+  }, [product, reviews]);
 
   return {
     aiResponse,
