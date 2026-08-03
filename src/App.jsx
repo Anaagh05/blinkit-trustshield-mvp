@@ -25,7 +25,13 @@ function App() {
     setShieldActive(true);
     triggerAI();
     setTimeout(() => {
-      trustShieldRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Since the UI renders twice (mobile & desktop views), find the visible one
+      const targets = document.querySelectorAll('.trustshield-scroll-target');
+      targets.forEach(el => {
+        if (el.offsetParent !== null) { // offsetParent is null if hidden
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     }, 100);
   };
 
@@ -67,7 +73,7 @@ function App() {
         
         {/* TrustShield expanded content */}
         {shieldActive && (
-          <div ref={trustShieldRef} className="animate-fade-in-up mt-2 bg-gray-50/50 py-2 border-y border-gray-100">
+          <div ref={trustShieldRef} className="trustshield-scroll-target animate-fade-in-up mt-2 bg-gray-50/50 py-2 border-y border-gray-100">
             <div className="px-4 mb-2 flex items-center justify-between">
               <h2 className="text-[14px] font-bold text-gray-900">TrustShield Report</h2>
               <button onClick={() => setShieldActive(false)} className="text-[10px] text-gray-500 underline font-medium">Close</button>
