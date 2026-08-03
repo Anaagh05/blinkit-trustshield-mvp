@@ -50,13 +50,13 @@ const AIReviewSummary = ({ loading, error, aiResponse, onSummarize }) => {
         )}
 
         {/* Error banner */}
-        {error && !loading && (
+        {error && !loading && !aiResponse && (
           <div className="p-2 bg-amber-50 border border-amber-200 rounded-lg text-center mb-2">
             <p className="text-[10px] font-medium text-amber-800 mb-1">
-              {error === 'OFFLINE' && 'Offline — showing cached insights'}
-              {error === 'RATE_LIMIT' && 'AI engine busy — showing cached insights'}
+              {error === 'OFFLINE' && 'Offline — could not load insights'}
+              {error === 'RATE_LIMIT' && 'AI engine busy — could not load insights'}
               {error === 'TIMEOUT' && 'Request timed out'}
-              {error === 'GENERIC' && 'Using cached AI summary'}
+              {error === 'GENERIC' && 'Failed to load AI summary'}
             </p>
             <button onClick={onSummarize} className="text-[10px] font-bold text-purple-700 underline">
               Retry
