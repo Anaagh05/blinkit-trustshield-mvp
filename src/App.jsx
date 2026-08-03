@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Navbar from './components/Navbar';
 import ProductImage from './components/ProductImage';
 import ProductHeader from './components/ProductHeader';
@@ -15,6 +15,7 @@ function App() {
   const [cartCount, setCartCount] = useState(0);
   const [shieldActive, setShieldActive] = useState(false);
   const { aiResponse, loading, error, triggerAI } = useAIInsights(productData, reviewsData);
+  const trustShieldRef = useRef(null);
 
   const handleAddToCart = (qty) => {
     setCartCount((prev) => prev + qty);
@@ -23,6 +24,9 @@ function App() {
   const handleActivateShield = () => {
     setShieldActive(true);
     triggerAI();
+    setTimeout(() => {
+      trustShieldRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   };
 
   // The TrustShield Button — highly visible, pulse effect, animated gradient
@@ -63,7 +67,7 @@ function App() {
         
         {/* TrustShield expanded content */}
         {shieldActive && (
-          <div className="animate-fade-in-up mt-2 bg-gray-50/50 py-2 border-y border-gray-100">
+          <div ref={trustShieldRef} className="animate-fade-in-up mt-2 bg-gray-50/50 py-2 border-y border-gray-100">
             <div className="px-4 mb-2 flex items-center justify-between">
               <h2 className="text-[14px] font-bold text-gray-900">TrustShield Report</h2>
               <button onClick={() => setShieldActive(false)} className="text-[10px] text-gray-500 underline font-medium">Close</button>
